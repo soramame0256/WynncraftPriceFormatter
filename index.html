@@ -1,15 +1,6 @@
 <html>
   <head>
     <title>WynncraftPriceFormatter</title>
-  </head>
-  <body>
-    <form>
-      <input type="text" id="inpt" name="a">入力場所</input>
-      <input type="submit" onsubmit="execute()"></input>
-    </form>
-    <p>
-      アウトプット
-    </p>
     <script type="text/javascript">
       function execute(){
         let elm = document.getElementById("inpt");
@@ -21,5 +12,14 @@
         document.getElementById("out").insertAdjacentHTML("afterend","<p>"+stx+"stx "+le+"le "+eb+"eb "+ee+"e</p>")");
       }
     </script>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="inpt" name="a">入力場所</input>
+      <input type="submit" onsubmit="execute()"></input>
+    </form>
+    <p>
+      アウトプット
+    </p>
   </body>
 </html>
