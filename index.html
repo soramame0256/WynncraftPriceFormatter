@@ -9,13 +9,40 @@
         let le = Math.floor((a-stx*262144)/4096);
         let eb = Math.floor((a-(stx*64+le)*4096)/64);
         let ee = Math.floor((a-(stx*4096+le*64+eb)*64));
-        document.getElementById("out").insertAdjacentHTML("afterend", "<p>"+stx+"stx "+le+"le "+eb+"eb "+ee+"e</p>");
+        if(stx+le+eb+ee+"" == "NaN") {
+          alert("入力された値に誤りがあります。"
+             +"\n不要な文字が含まれていたり、全角数字で入力されていませんか?"
+             +"\n正しく入力されている場合は https://github.com/soramame0256/WynncraftPriceFormatter/issues まで。"
+          );
+          return;
+        }
+        document.getElementById("out").value = stx+"stx "+le+"le "+eb+"eb "+ee+"e";
+      }
+      function copyOutput(){
+        if(navigator.clipboard){
+          let str = document.getElementById("out").value;
+          if(str == "結果はここに表示されます") {
+            alert("結果が存在しません!");
+            return;
+          }
+          navigator.clipboard.writeText(str);
+          alert("コピーしました!");
+        }else{
+          alert("未対応のブラウザです!");
+        }
+      }
+      function runAndCopy(){
+        execute();
+        copyOutput();
       }
     </script>
   </head>
   <body>
-    <input type="text" id="inpt" name="a"></input>
-    <input type="button" value="実行" onclick="execute()"></input>
-    <p id="out"></p>
+    <input type="text" id="inpt" name="a" />
+    <input type="button" value="実行" onclick="execute()" />
+    <p/>
+    <input type="text" id="out" value="結果はここに表示されます" disabled />
+    <input type="button" value="コピー" onclick="copyOutput()" />
+    <input type="button" value="実行してコピー" onclick="runAndCopy()" />
   </body>
 </html>
