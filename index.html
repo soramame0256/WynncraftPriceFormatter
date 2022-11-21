@@ -7,17 +7,15 @@
         let a = elm.value;
         let stx = Math.floor(a/64/64/64);
         let le = Math.floor((a-stx*262144)/4096);
-        let eb = Math.floor((a-(stx*64+le)*4096);
+        let eb = Math.floor((a-(stx*64+le)*4096)/64);
         let ee = Math.floor((a-(stx*4096+le*64+eb)*64));
-        document.getElementById("out").insertAdjacentHTML("afterend","<p>"+stx+"stx "+le+"le "+eb+"eb "+ee+"e</p>")");
+        document.getElementById("out").insertAdjacentHTML("afterend", "<p>"+stx+"stx "+le+"le "+eb+"eb "+ee+"e</p>");
       }
     </script>
   </head>
   <body>
-    <input type="text" id="inpt" name="a">入力場所</input>
+    <input type="text" id="inpt" name="a"></input>
     <input type="button" value="実行" onclick="execute()"></input>
-    <p id="out">
-      アウトプット
-    </p>
+    <p id="out"></p>
   </body>
 </html>
