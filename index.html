@@ -14,11 +14,11 @@
         let eb = Math.floor((a-(stx*64+le)*4096)/64);
         let ee = Math.floor((a-(stx*4096+le*64+eb)*64));
         if(stx+le+eb+ee+"" == "NaN") {
-          if(lang == "ja") 
+          if(lang == "ja-JP") 
             alert("入力された値に誤りがあります。"
                +"\n不要な文字が含まれていたり、全角数字で入力されていませんか?"
                +"\n正しく入力されている場合は https://github.com/soramame0256/WynncraftPriceFormatter/issues まで。");
-          if(lang != "ja")
+          if(lang != "ja-JP")
             alert("Something is wrong at input value."
                +"\nAre there no numeric character in input?"
                +"\nIf it isn't wrong and this message appeared, make issue at https://github.com/soramame0256/WynncraftPriceFormatter/issues");
@@ -46,8 +46,8 @@
             alert("copied!");
           }
         }else{
-          if(lang == "ja") alert("未対応のブラウザです!");
-          if(lang != "ja") alert("This operation is not supported in your browser!");
+          if(lang == "ja-JP") alert("未対応のブラウザです!");
+          if(lang != "ja-JP") alert("This operation is not supported in your browser!");
         }
       }
       function runAndCopy(){
